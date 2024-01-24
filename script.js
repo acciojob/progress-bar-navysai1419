@@ -16,7 +16,13 @@ function updateProgress() {
       circle.classList.remove('active');
     }
   });
+
+  const lines = document.querySelectorAll('.line');
+  lines.forEach((line, index) => {
+    line.style.backgroundColor = index < currentStep - 1 ? 'blue' : '#ccc';
+  });
 }
+
 
 function prevStep() {
   if (currentStep > 1) {
